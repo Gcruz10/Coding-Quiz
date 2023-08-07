@@ -1,16 +1,16 @@
 var startButton = document.querySelector(".start-btn");
-var question = document.querySelector("question");
-var answers = document.querySelector = {
-    0: document.querySelector("#1"),
-    1: document.querySelector("#2"),
-    2: document.querySelector("#3"),
-    3: document.querySelector("#4")
-}  
+var question = document.querySelector(".question");
+var answers = [
+    document.getElementById("1"),
+    document.getElementById("2"),
+    document.getElementById("3"),
+    document.getElementById("4")
+  ];
 var timeLeft = 75;
 function quizTimer(){
     var timer1 = setInterval(function() {
     timeLeft--;
-    if (timeleft === 0){
+    if (timeLeft === 0){
         clearInterval(timer1);
     }
     }, 1000);
@@ -32,5 +32,15 @@ var answerArr = {
     4: ["<head>", "<nav>", "<body>", "<div>"]
 }
 
+function questionMaker(questionText, answersArr) {
+    question.textContent = questionText;
+    for (var x = 0; x < answersArr.length; x++) {
+        answers[x].textContent = x + 1 + "." + answersArr[x];
+    }
+}
+questionMaker(questionArr[0], answerArr[0]);
 
+startButton.addEventListener("click", function() {
+  quizTimer();
+});
 
