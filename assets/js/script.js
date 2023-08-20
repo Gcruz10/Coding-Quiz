@@ -7,6 +7,8 @@ var answers = [
     document.getElementById("4")
   ];
 var timeLeft = 75;
+var score = 0;
+var questionIndex = 0;
 function quizTimer(){
     var timer1 = setInterval(function() {
     timeLeft--;
@@ -35,7 +37,18 @@ var answerArr = {
 function questionMaker(questionText, answersArr) {
     question.textContent = questionText;
     for (var x = 0; x < answersArr.length; x++) {
-        answers[x].textContent = x + 1 + "." + answersArr[x];
+        answers[x].textContent = x + 1 + "." + answersArr[x]
+        answers[x].addEventListener("click", function(event) {
+            if (event.target.textContent === "Boolean") {
+                score++;
+                questionIndex++;
+                questionMaker(questionArr[questionIndex], answerArr[questionIndex]);
+            }
+            else {
+                questionIndex++;
+                questionMaker(questionArr[questionIndex], answerArr[questionIndex]);
+            }
+        })
     }
 }
 questionMaker(questionArr[0], answerArr[0]);
