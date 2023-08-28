@@ -7,34 +7,42 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <title>Can You Quiz It</title>
 </head>
-<body>
-    <header id="main">
+<body style="background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);" >
+    <header id="main" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <h1>Can you Quiz It!</h1>
         <h2>Highest Scores:</h2>
-        <button class="start-btn">Start</button>
+        <button class="start-btn" style="padding: 10px 20px; background-color: #C850C0; color: black; border: none; border-radius: 5px;">Start</button>
     </header>
 
-    <section>
+    <section style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <h2 class="question"></h2>
-        <button class="answer-button" data-number="0" id="1">1. yes</button>
-        <button class="answer-button" data-number="1" id="2">2. yes</button>
-        <button class="answer-button" data-number="2" id="3">3. yes</button>
-        <button class="answer-button" data-number="3" id="4">4. yes</button>
+        <button class="answer-button" data-number="0" id="1" style="padding: 8px 15px; background-color: #C850C0; color: black; border: none; border-radius: 5px;">1. yes</button>
+        <button class="answer-button" data-number="1" id="2" style="padding: 8px 15px; background-color: #C850C0; color: black; border: none; border-radius: 5px;">2. yes</button>
+        <button class="answer-button" data-number="2" id="3" style="padding: 8px 15px; background-color: #C850C0; color: black; border: none; border-radius: 5px;">3. yes</button>
+        <button class="answer-button" data-number="3" id="4" style="padding: 8px 15px; background-color: #C850C0; color: black; border: none; border-radius: 5px;">4. yes</button>
     </section>
 
-    <section id="high-scores">
+    <section id="quiz-finished" style="display: none; text-align: center;">
+        <h2>Quiz Finished!</h2>
+        <p>Your Score: <span id="final-score"></span></p>
+        <label for="initials">Enter Your Initials:</label>
+        <input type="text" id="initials-input">
+        <button id="submit-score" style="padding: 10px 20px; background-color: #C850C0; color: white; border: none; border-radius: 5px;">Submit Score</button>
+    </section>
+
+    <section id="high-scores" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
         <h2>
             <label for="initials">Enter Initials:</label>
-            <input type="text" name="initials" id="initials" />
-            <button id="submit-score">Submit</button>
+            <input type="text" name="initials" id="initials"/>
+            <button id="submit-score" style="padding: 10px 20px; background-color: #C850C0; color: white; border: none; border-radius: 5px;">Submit</button>
         </h2>
     </section>
-    <div>
-        <button id="go-back">Go Back</button>
-        <button id="clear-scores">Clear Scores</button>
+    <div style="display: flex; justify-content: center;">
+        <button id="go-back" style="padding: 10px 20px; background-color: #C850C0; color: white; border: none; border-radius: 5px;">Go Back</button>
+        <button id="clear-scores" style="padding: 10px 20px; background-color: #C850C0; color: white; border: none; border-radius: 5px;">Clear Scores</button>
     </div>
     
     <script src="./assets/js/script.js"></script>
-
 </body>
 </html>
+
